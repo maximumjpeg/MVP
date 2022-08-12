@@ -19,6 +19,10 @@ const App = () => {
   const [name, setName] = useState('');
   const [endGame, setEndGame] = useState(false);
 
+  const earnPoint = () => {
+    setScore((o) => {o + 1});
+  };
+
   useEffect(() => {
     // set last score
     var player = {};
@@ -29,7 +33,7 @@ const App = () => {
 
     // determine if overwriting current high score
     var recent = localStorage.getItem('high score');
-    console.log('recent score', recent.score);
+    // console.log('recent score', recent.score);
 
     localStorage.setItem('high score', JSON.stringify(player));
 
@@ -41,17 +45,17 @@ const App = () => {
   } else {
     return (
       <div className = "canvas-container">
-        <Sound
+        {/* <Sound
           url='./assets/bgm/deepDiver.mp3'
           playStatus={Sound.status.PLAYING}
           volume={25}
           autoLoad={true}
           loop={true}
           playFromPosition={2500}
-        />
-        <Timer />
+        /> */}
+        {/* <Timer /> */}
         <Score score={score}/>
-        <h1>3D Puzzle Mini Game!</h1>
+        <h1>Cubes in the Cloud</h1>
         <Game score={score} setScore={setScore}/>
       </div>
     );

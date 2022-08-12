@@ -3,7 +3,7 @@ import React from 'react';
 const Score = ({ score }) => {
   return (
     <div>
-      Score:{score}
+      Score: {score}
     </div>
   );
 };

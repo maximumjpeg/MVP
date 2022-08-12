@@ -231,6 +231,7 @@ import { Canvas, useFrame, extend, useThree } from '@react-three/fiber'
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
+import Box from './objects/Cube.jsx';
 
 // Extend will make OrbitControls available as a JSX element called orbitControls
 extend({ OrbitControls });
@@ -263,28 +264,38 @@ const CameraControls = () => {
 
 
 
-function Box(props, { score, setScore }) {
-  // This reference gives us direct access to the THREE.Mesh object
-  const ref = useRef()
-  // Hold state for hovered and clicked events
-  const [hovered, hover] = useState(false)
-  const [clicked, click] = useState(false)
-  // Subscribe this component to the render-loop, rotate the mesh every frame
-  useFrame((state, delta) => (ref.current.rotation.x += 0.01))
-  // Return the view, these are regular Threejs elements expressed in JSX
-  return (
-    <mesh
-      {...props}
-      ref={ref}
-      scale={clicked ? 0 : 1}
-      onClick={(event) => {click(!clicked)}}
-      onPointerOver={(event) => hover(true)}
-      onPointerOut={(event) => hover(false)}>
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={hovered ? 'green' : 'orange'} />
-    </mesh>
-  )
-}
+// function Box(props, { score, setScore }) {
+// 	// console.log('test', score)
+// 	const tester = () => {
+// 		var count = 9
+// 	  scene.traverse((obj) => {
+// 			if (obj) {
+// 				count--;
+// 			}
+// 		});
+// 		return count;
+// 	}
+//   // This reference gives us direct access to the THREE.Mesh object
+//   const ref = useRef()
+//   // Hold state for hovered and clicked events
+//   const [hovered, hover] = useState(false)
+//   const [clicked, click] = useState(false)
+//   // Subscribe this component to the render-loop, rotate the mesh every frame
+//   useFrame((state, delta) => (ref.current.rotation.x += 0.01))
+//   // Return the view, these are regular Threejs elements expressed in JSX
+//   return (
+//     <mesh
+//       {...props}
+//       ref={ref}
+//       scale={clicked ? 2 : 1}
+//       onClick={(event) => {click(!clicked); }}
+//       onPointerOver={(event) => hover(true)}
+//       onPointerOut={(event) => hover(false)}>
+//       <boxGeometry args={[1, 1, 1]} />
+//       <meshStandardMaterial color={hovered ? 'green' : 'orange'} />
+//     </mesh>
+//   )
+// }
 
 
 
@@ -354,12 +365,9 @@ function Box2(props) {
 }
 
 export default function Game({ score, setScore }) {
-	console.log('score', score)
-	const clickHandler= (e) => {
-		e.preventDefault();
-		setScore((old) => old++);
-		console.log('click handled!');
-	};
+	// experiment to track score and adjust it actively
+	console.log('score', score);
+
   return (
     <Canvas>
 			<CameraControls />
@@ -379,7 +387,7 @@ export default function Game({ score, setScore }) {
 
       {/* background layer 1 */}
       {/* next layer center*/}
-      <Box position={[-2.2, 2, -10]} onClick={clickHandler} />
+      {/* <Box position={[-2.2, 2, -10]} onClick={clickHandler} />
       <Box position={[0, 2, -10]} onClick={clickHandler}/>
       <Box position={[2.2, 2, -10]} onClick={clickHandler}/>
       <Box position={[-2.2, 0, -10]} onClick={clickHandler}/>
@@ -387,21 +395,21 @@ export default function Game({ score, setScore }) {
       <Box position={[2.2, 0, -10]} onClick={clickHandler}/>
       <Box position={[-2.2, -2, -10]} onClick={clickHandler}/>
       <Box position={[0, -2, -10]} onClick={clickHandler}/>
-      <Box position={[2.2, -2, -10]} onClick={clickHandler}/>
+      <Box position={[2.2, -2, -10]} onClick={clickHandler}/> */}
 
       {/* next layer left */}
-      <Box position={[-4.4, 2, -10]} />
-      <Box position={[-4.4, 0, -10]} />
-      <Box position={[-4.4, -2, -10]} />
-      <Box position={[-6.6, 2, -10]} />
-      <Box position={[-6.6, 0, -10]} />
-      <Box position={[-6.6, -2, -10]} />
-      <Box position={[-8.8, -2, -10]} />
-      <Box position={[-8.8, 2, -10]} />
-      <Box position={[-8.8, 0, -10]} />
+      <Box position={[-4.4, 2, -10]} score={score} setScore={setScore} />
+      <Box position={[-4.4, 0, -10]} score={score} setScore={setScore} />
+      <Box position={[-4.4, -2, -10]} score={score} setScore={setScore} />
+      <Box position={[-6.6, 2, -10]} score={score} setScore={setScore} />
+      <Box position={[-6.6, 0, -10]} score={score} setScore={setScore} />
+      <Box position={[-6.6, -2, -10]} score={score} setScore={setScore} />
+      <Box position={[-8.8, -2, -10]} score={score} setScore={setScore} />
+      <Box position={[-8.8, 2, -10]} score={score} setScore={setScore} />
+      <Box position={[-8.8, 0, -10]} score={score} setScore={setScore} />
 
       {/* next layer C2 middle right */}
-      <Box position={[4.4, 2, -10]} />
+      {/* <Box position={[4.4, 2, -10]} />
       <Box position={[4.4, -2, -10]} />
       <Box position={[4.4, 0, -10]} />
       <Box position={[6.6, 2, -10]} />
@@ -409,10 +417,10 @@ export default function Game({ score, setScore }) {
       <Box position={[6.6, -2, -10]} />
       <Box position={[8.8, -2, -10]} />
       <Box position={[8.8, 2, -10]} />
-      <Box position={[8.8, 0, -10]} />
+      <Box position={[8.8, 0, -10]} /> */}
 
       {/* next layer C1 top right */}
-      <Box position={[4.4, 8, -10]} />
+      {/* <Box position={[4.4, 8, -10]} />
       <Box position={[4.4, 6, -10]} />
       <Box position={[4.4, 4, -10]} />
       <Box position={[6.6, 8, -10]} />
@@ -420,10 +428,10 @@ export default function Game({ score, setScore }) {
       <Box position={[6.6, 4, -10]} />
       <Box position={[8.8, 8, -10]} />
       <Box position={[8.8, 6, -10]} />
-      <Box position={[8.8, 4, -10]} />
+      <Box position={[8.8, 4, -10]} /> */}
 
       {/* next layer B1 top right */}
-      <Box position={[2.2, 8, -10]} />
+      {/* <Box position={[2.2, 8, -10]} />
       <Box position={[2.2, 6, -10]} />
       <Box position={[2.2, 4, -10]} />
       <Box position={[0, 8, -10]} />
@@ -431,10 +439,10 @@ export default function Game({ score, setScore }) {
       <Box position={[0, 4, -10]} />
       <Box position={[-2.2, 8, -10]} />
       <Box position={[-2.2, 6, -10]} />
-      <Box position={[-2.2, 4, -10]} />
+      <Box position={[-2.2, 4, -10]} /> */}
 
       {/* next layer A1 top right */}
-      <Box position={[-4.4, 8, -10]} />
+      {/* <Box position={[-4.4, 8, -10]} />
       <Box position={[-4.4, 6, -10]} />
       <Box position={[-4.4, 4, -10]} />
       <Box position={[-6.6, 8, -10]} />
@@ -442,10 +450,10 @@ export default function Game({ score, setScore }) {
       <Box position={[-6.6, 4, -10]} />
       <Box position={[-8.8, 8, -10]} />
       <Box position={[-8.8, 6, -10]} />
-      <Box position={[-8.8, 4, -10]} />
+      <Box position={[-8.8, 4, -10]} /> */}
 
       {/* next layer C3 middle right */}
-      <Box position={[4.4, -4, -10]} />
+      {/* <Box position={[4.4, -4, -10]} />
       <Box position={[4.4, -6, -10]} />
       <Box position={[4.4, -8, -10]} />
       <Box position={[6.6, -4, -10]} />
@@ -453,10 +461,10 @@ export default function Game({ score, setScore }) {
       <Box position={[6.6, -8, -10]} />
       <Box position={[8.8, -4, -10]} />
       <Box position={[8.8, -6, -10]} />
-      <Box position={[8.8, -8, -10]} />
+      <Box position={[8.8, -8, -10]} /> */}
 
       {/* next layer B3 middle right */}
-      <Box position={[2.2, -4, -10]} />
+      {/* <Box position={[2.2, -4, -10]} />
       <Box position={[2.2, -6, -10]} />
       <Box position={[2.2, -8, -10]} />
       <Box position={[0, -4, -10]} />
@@ -464,10 +472,10 @@ export default function Game({ score, setScore }) {
       <Box position={[0, -8, -10]} />
       <Box position={[-2.2, -4, -10]} />
       <Box position={[-2.2, -6, -10]} />
-      <Box position={[-2.2, -8, -10]} />
+      <Box position={[-2.2, -8, -10]} /> */}
 
       {/* next layer A3 middle right */}
-      <Box position={[-4.4, -4, -10]} />
+      {/* <Box position={[-4.4, -4, -10]} />
       <Box position={[-4.4, -6, -10]} />
       <Box position={[-4.4, -8, -10]} />
       <Box position={[-6.6, -4, -10]} />
@@ -475,9 +483,9 @@ export default function Game({ score, setScore }) {
       <Box position={[-6.6, -8, -10]} />
       <Box position={[-8.8, -4, -10]} />
       <Box position={[-8.8, -6, -10]} />
-      <Box position={[-8.8, -8, -10]} />
+      <Box position={[-8.8, -8, -10]} /> */}
 
-      <Box position={[-2.2, 0, -8]} />
+      {/* <Box position={[-2.2, 0, -8]} />
       <Box position={[0, 0, -8]} />
       <Box position={[2.2, 0, -8]} />
       <Box position={[-2.2, -2, -8]} />
@@ -489,7 +497,7 @@ export default function Game({ score, setScore }) {
       <Box position={[2.2, 0, -6]} />
       <Box position={[-2.2, -2, -6]} />
       <Box position={[0, -2, -6]} />
-      <Box position={[2.2, -2, -6]} />
+      <Box position={[2.2, -2, -6]} /> */}
 			<SkyBox />
     </Canvas>
   )
