@@ -42,6 +42,15 @@ const App = () => {
     return (
       <Menu modal={modal} setModal={setModal} name={name} setName={setName} />
     );
+  }
+  if (score === 81) {
+    return (
+      <div>
+        <h1>Game Over</h1>
+        <h3>{name}'s Score: {score}</h3>
+        <button onClick={(e) => {e.preventDefault(); setModal(false); setScore(0);}}>Reset</button>
+      </div>
+    );
   } else {
     return (
       <div className = "canvas-container">
@@ -55,7 +64,7 @@ const App = () => {
         /> */}
         {/* <Timer /> */}
         <Score score={score}/>
-        <h1>Cubes in the Cloud</h1>
+        <h1>Click all the cubes!</h1>
         <Game score={score} setScore={setScore}/>
       </div>
     );

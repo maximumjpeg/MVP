@@ -33,7 +33,7 @@ function Box(props) {
     <mesh
       {...props}
       ref={ref}
-      scale={clicked ? 2 : 1}
+      scale={clicked ? 0 : 1}
       onClick={(event) => {click(!clicked); tester()}}
       onPointerOver={(event) => hover(true)}
       onPointerOut={(event) => hover(false)}>

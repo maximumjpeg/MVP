@@ -396,6 +396,15 @@ export default function Game({ score, setScore }) {
       <Box position={[-2.2, -2, -10]} onClick={clickHandler}/>
       <Box position={[0, -2, -10]} onClick={clickHandler}/>
       <Box position={[2.2, -2, -10]} onClick={clickHandler}/> */}
+      <Box position={[-2.2, 2, -10]} score={score} setScore={setScore} />
+      <Box position={[0, 2, -10]} score={score} setScore={setScore} />
+      <Box position={[2.2, 2, -10]} score={score} setScore={setScore} />
+      <Box position={[-2.2, 0, -10]} score={score} setScore={setScore} />
+      <Box position={[0, 0, -10]} score={score} setScore={setScore} />
+      <Box position={[2.2, 0, -10]} score={score} setScore={setScore} />
+      <Box position={[-2.2, -2, -10]} score={score} setScore={setScore} />
+      <Box position={[0, -2, -10]} score={score} setScore={setScore} />
+      <Box position={[2.2, -2, -10]} score={score} setScore={setScore} />
 
       {/* next layer left */}
       <Box position={[-4.4, 2, -10]} score={score} setScore={setScore} />
@@ -409,81 +418,83 @@ export default function Game({ score, setScore }) {
       <Box position={[-8.8, 0, -10]} score={score} setScore={setScore} />
 
       {/* next layer C2 middle right */}
-      {/* <Box position={[4.4, 2, -10]} />
-      <Box position={[4.4, -2, -10]} />
-      <Box position={[4.4, 0, -10]} />
-      <Box position={[6.6, 2, -10]} />
-      <Box position={[6.6, 0, -10]} />
-      <Box position={[6.6, -2, -10]} />
-      <Box position={[8.8, -2, -10]} />
-      <Box position={[8.8, 2, -10]} />
-      <Box position={[8.8, 0, -10]} /> */}
+      <Box position={[4.4, 2, -10]} score={score} setScore={setScore} />
+      <Box position={[4.4, -2, -10]} score={score} setScore={setScore} />
+      <Box position={[4.4, 0, -10]} score={score} setScore={setScore} />
+      <Box position={[6.6, 2, -10]} score={score} setScore={setScore} />
+      <Box position={[6.6, 0, -10]} score={score} setScore={setScore} />
+      <Box position={[6.6, -2, -10]} score={score} setScore={setScore} />
+      <Box position={[8.8, -2, -10]} score={score} setScore={setScore} />
+      <Box position={[8.8, 2, -10]} score={score} setScore={setScore} />
+      <Box position={[8.8, 0, -10]} score={score} setScore={setScore} />
 
       {/* next layer C1 top right */}
-      {/* <Box position={[4.4, 8, -10]} />
-      <Box position={[4.4, 6, -10]} />
-      <Box position={[4.4, 4, -10]} />
-      <Box position={[6.6, 8, -10]} />
-      <Box position={[6.6, 6, -10]} />
-      <Box position={[6.6, 4, -10]} />
-      <Box position={[8.8, 8, -10]} />
-      <Box position={[8.8, 6, -10]} />
-      <Box position={[8.8, 4, -10]} /> */}
+      <Box position={[4.4, 8, -10]} score={score} setScore={setScore} />
+      <Box position={[4.4, 6, -10]} score={score} setScore={setScore} />
+      <Box position={[4.4, 4, -10]} score={score} setScore={setScore} />
+      <Box position={[6.6, 8, -10]} score={score} setScore={setScore} />
+      <Box position={[6.6, 6, -10]} score={score} setScore={setScore} />
+      <Box position={[6.6, 4, -10]} score={score} setScore={setScore} />
+      <Box position={[8.8, 8, -10]} score={score} setScore={setScore} />
+      <Box position={[8.8, 6, -10]} score={score} setScore={setScore} />
+      <Box position={[8.8, 4, -10]} score={score} setScore={setScore} />
+
+
 
       {/* next layer B1 top right */}
-      {/* <Box position={[2.2, 8, -10]} />
-      <Box position={[2.2, 6, -10]} />
-      <Box position={[2.2, 4, -10]} />
-      <Box position={[0, 8, -10]} />
-      <Box position={[0, 6, -10]} />
-      <Box position={[0, 4, -10]} />
-      <Box position={[-2.2, 8, -10]} />
-      <Box position={[-2.2, 6, -10]} />
-      <Box position={[-2.2, 4, -10]} /> */}
+      <Box position={[2.2, 8, -10]} score={score} setScore={setScore} />
+      <Box position={[2.2, 6, -10]} score={score} setScore={setScore} />
+      <Box position={[2.2, 4, -10]} score={score} setScore={setScore} />
+      <Box position={[0, 8, -10]} score={score} setScore={setScore} />
+      <Box position={[0, 6, -10]} score={score} setScore={setScore} />
+      <Box position={[0, 4, -10]} score={score} setScore={setScore} />
+      <Box position={[-2.2, 8, -10]} score={score} setScore={setScore} />
+      <Box position={[-2.2, 6, -10]} score={score} setScore={setScore} />
+      <Box position={[-2.2, 4, -10]} score={score} setScore={setScore} />
 
       {/* next layer A1 top right */}
-      {/* <Box position={[-4.4, 8, -10]} />
-      <Box position={[-4.4, 6, -10]} />
-      <Box position={[-4.4, 4, -10]} />
-      <Box position={[-6.6, 8, -10]} />
-      <Box position={[-6.6, 6, -10]} />
-      <Box position={[-6.6, 4, -10]} />
-      <Box position={[-8.8, 8, -10]} />
-      <Box position={[-8.8, 6, -10]} />
-      <Box position={[-8.8, 4, -10]} /> */}
+      <Box position={[-4.4, 8, -10]} score={score} setScore={setScore} />
+      <Box position={[-4.4, 6, -10]} score={score} setScore={setScore} />
+      <Box position={[-4.4, 4, -10]} score={score} setScore={setScore} />
+      <Box position={[-6.6, 8, -10]} score={score} setScore={setScore} />
+      <Box position={[-6.6, 6, -10]} score={score} setScore={setScore} />
+      <Box position={[-6.6, 4, -10]} score={score} setScore={setScore} />
+      <Box position={[-8.8, 8, -10]} score={score} setScore={setScore} />
+      <Box position={[-8.8, 6, -10]} score={score} setScore={setScore} />
+      <Box position={[-8.8, 4, -10]} score={score} setScore={setScore} />
 
       {/* next layer C3 middle right */}
-      {/* <Box position={[4.4, -4, -10]} />
-      <Box position={[4.4, -6, -10]} />
-      <Box position={[4.4, -8, -10]} />
-      <Box position={[6.6, -4, -10]} />
-      <Box position={[6.6, -6, -10]} />
-      <Box position={[6.6, -8, -10]} />
-      <Box position={[8.8, -4, -10]} />
-      <Box position={[8.8, -6, -10]} />
-      <Box position={[8.8, -8, -10]} /> */}
+      <Box position={[4.4, -4, -10]} score={score} setScore={setScore} />
+      <Box position={[4.4, -6, -10]} score={score} setScore={setScore} />
+      <Box position={[4.4, -8, -10]} score={score} setScore={setScore} />
+      <Box position={[6.6, -4, -10]} score={score} setScore={setScore} />
+      <Box position={[6.6, -6, -10]} score={score} setScore={setScore} />
+      <Box position={[6.6, -8, -10]} score={score} setScore={setScore} />
+      <Box position={[8.8, -4, -10]} score={score} setScore={setScore} />
+      <Box position={[8.8, -6, -10]} score={score} setScore={setScore} />
+      <Box position={[8.8, -8, -10]} score={score} setScore={setScore} />
 
       {/* next layer B3 middle right */}
-      {/* <Box position={[2.2, -4, -10]} />
-      <Box position={[2.2, -6, -10]} />
-      <Box position={[2.2, -8, -10]} />
-      <Box position={[0, -4, -10]} />
-      <Box position={[0, -6, -10]} />
-      <Box position={[0, -8, -10]} />
-      <Box position={[-2.2, -4, -10]} />
-      <Box position={[-2.2, -6, -10]} />
-      <Box position={[-2.2, -8, -10]} /> */}
+      <Box position={[2.2, -4, -10]} score={score} setScore={setScore} />
+      <Box position={[2.2, -6, -10]} score={score} setScore={setScore} />
+      <Box position={[2.2, -8, -10]} score={score} setScore={setScore} />
+      <Box position={[0, -4, -10]} score={score} setScore={setScore} />
+      <Box position={[0, -6, -10]} score={score} setScore={setScore} />
+      <Box position={[0, -8, -10]} score={score} setScore={setScore} />
+      <Box position={[-2.2, -4, -10]} score={score} setScore={setScore} />
+      <Box position={[-2.2, -6, -10]} score={score} setScore={setScore} />
+      <Box position={[-2.2, -8, -10]} score={score} setScore={setScore} />
 
       {/* next layer A3 middle right */}
-      {/* <Box position={[-4.4, -4, -10]} />
-      <Box position={[-4.4, -6, -10]} />
-      <Box position={[-4.4, -8, -10]} />
-      <Box position={[-6.6, -4, -10]} />
-      <Box position={[-6.6, -6, -10]} />
-      <Box position={[-6.6, -8, -10]} />
-      <Box position={[-8.8, -4, -10]} />
-      <Box position={[-8.8, -6, -10]} />
-      <Box position={[-8.8, -8, -10]} /> */}
+      <Box position={[-4.4, -4, -10]} score={score} setScore={setScore} />
+      <Box position={[-4.4, -6, -10]} score={score} setScore={setScore} />
+      <Box position={[-4.4, -8, -10]} score={score} setScore={setScore} />
+      <Box position={[-6.6, -4, -10]} score={score} setScore={setScore} />
+      <Box position={[-6.6, -6, -10]} score={score} setScore={setScore} />
+      <Box position={[-6.6, -8, -10]} score={score} setScore={setScore} />
+      <Box position={[-8.8, -4, -10]} score={score} setScore={setScore} />
+      <Box position={[-8.8, -6, -10]} score={score} setScore={setScore} />
+      <Box position={[-8.8, -8, -10]} score={score} setScore={setScore} />
 
       {/* <Box position={[-2.2, 0, -8]} />
       <Box position={[0, 0, -8]} />

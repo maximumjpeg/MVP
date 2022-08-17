@@ -6,9 +6,9 @@ const Menu = ( { modal, setModal, name, setName }) => {
       // menu
       <div className="menu-container">
         <div className="menu">
-          <h1>Game</h1>
+          <h1>Cloudy Cubes</h1>
           <label>your initials?</label><br></br>
-          <input type="text" name="name" onChange={(e) => {setName(e.target.value)}}></input><br></br>
+          <input autocomplete="off" type="text" name="name" onChange={(e) => {setName(e.target.value)}}></input><br></br>
           <button onClick={e => {setModal(old => (!old));}}>Start</button>
         </div>
       </div>
